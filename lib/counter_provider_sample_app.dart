@@ -16,7 +16,9 @@ class CounterProviderSampleApp extends StatelessWidget {
         title: const Text('Provider 적용 카운터 앱'),
       ),
       body: Center(
-        child: Text('${viewModel.count}',
+        child: viewModel.isLoading
+        ? const Center( child: CircularProgressIndicator(),)
+        :Text('${viewModel.count}',
           style: Theme.of(context).textTheme.headline2,),
       ),
       floatingActionButton: FloatingActionButton(
